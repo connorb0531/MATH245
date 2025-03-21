@@ -103,6 +103,9 @@ class Graph:
     def edge_str(self):
         return "{{" + "}, {".join(f"{num_to_letter(a)}, {num_to_letter(b)}" for a, b in self.get_unique_edges()) + "}}"
 
+    def graph_str(self):
+        return 'G=(' + self.vertex_str() + ',' + self.edge_str() + ')'
+
     def print_connection_array(self):
         print(self.connections)
 
@@ -113,8 +116,7 @@ class Graph:
         print('E=' + self.edge_str())
 
     def print_graph(self):
-        graph_str = 'G=(' + self.vertex_str() + ',' + self.edge_str() + ')'
-        print(graph_str)
+        print(self.graph_str())
 
 # Converts vertex int to letter
 def num_to_letter(num):
